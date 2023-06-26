@@ -5,8 +5,8 @@ import ContentLayout from "./pages/ContentLayout";
 import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
 import MoviesPage from "./pages/MoviesPage";
-import ShowsPage from "./pages/ShowsPage";
-import BookmarkedPage from "./pages/BookmarkedPage";
+import SeriesPage from "./pages/SeriesPage";
+import BookmarkPage from "./pages/BookmarkPage";
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
           <Route element={<ContentLayout />} errorElement={<ErrorPage />}>
             <Route index="true" element={<HomePage />} />
             <Route path="movies" element={<MoviesPage />} />
-            <Route path="tv-shows" element={<ShowsPage />} />
-            <Route path="bookmarked" element={<BookmarkedPage />} />
+            <Route path="series" element={<SeriesPage />} />
+            <Route path="bookmark" element={<BookmarkPage />} />
           </Route>
         </Route>
       </Routes>

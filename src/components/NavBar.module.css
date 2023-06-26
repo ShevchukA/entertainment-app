@@ -1,0 +1,14 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  margin: 32px 36px 32px 32px;
+  background-color: var(--dark-color);
+  border-radius: 20px;
+  width: 96px;
+  text-align: center;
+}
+
+/* to set avatar in the bottom */
+.navigation>*:last-child {
+  margin-top: auto;
+}
