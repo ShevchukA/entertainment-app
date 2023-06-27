@@ -5,6 +5,8 @@
   background-color: var(--dark-color);
   border-radius: 20px;
   width: 96px;
+  min-height: 460px;
+  max-height: 960px;
   text-align: center;
 }
 
