@@ -10,7 +10,8 @@ function NavButton({ path, icon }) {
       }
       to={path}
     >
-      <img src={icon} alt={path} className={classes.image} />
+      <img src={icon} alt={path} />
+      {/* <svg src={icon} /> */}
     </NavLink>
   );
 }

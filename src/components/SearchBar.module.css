@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  margin: 54px 0 19px 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  width: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.field {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 36px 0 24px;
+}
+
+.field input {
+  height: 52px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid transparent;
+  outline: none;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  font-size: 24px;
+  caret-color: var(--red-color);
+  cursor: pointer;
+}
+
+.field input:focus {
+  border-bottom: 1px solid var(--sea-color);
+}

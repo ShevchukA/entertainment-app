@@ -11,14 +11,14 @@ import classes from "./NavBar.module.css";
 
 function NavBar() {
   return (
-    <div className={classes.navigation}>
+    <nav className={classes.navigation}>
       <Logo />
       <NavButton path="/" icon={homeIcon} />
       <NavButton path="/movies" icon={moviesIcon} />
       <NavButton path="/series" icon={showsIcon} />
       <NavButton path="/bookmark" icon={bookmarkIcon} />
       <Avatar />
-    </div>
+    </nav>
   );
 }
 
