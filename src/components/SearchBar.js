@@ -8,7 +8,7 @@ function SearchBar() {
         <img src={icon} />
       </div>
       <div className={classes.field}>
-        <input type="text" placeholder="Search for movies on TV series" />
+        <input type="text" placeholder="Search for movies and TV series" />
       </div>
     </div>
   );
