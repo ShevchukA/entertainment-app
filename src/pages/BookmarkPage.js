@@ -5,6 +5,7 @@ function BookmarkPage() {
     <>
       <h1>BookmarkPage</h1>
       <ContentGrid />
+      <ContentGrid />
     </>
   );
 }

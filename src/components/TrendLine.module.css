@@ -1,0 +1,15 @@
+.line {
+  display: grid;
+  height: 250px;
+  /* height: 230px;  */
+  /* grid-template-rows: 1fr; */
+  grid-auto-flow: column;
+  column-gap: 40px;
+  overflow-x: scroll;
+}
+
+
+.line img {
+  display: inline;
+  height: 230px;
+}

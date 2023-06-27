@@ -4,7 +4,7 @@
   margin: 32px 36px 32px 32px;
   background-color: var(--dark-color);
   border-radius: 20px;
-  width: 96px;
+  min-width: 96px;
   min-height: 460px;
   max-height: 960px;
   text-align: center;

@@ -4,7 +4,6 @@ import TrendLine from "../components/TrendLine";
 function HomePage() {
   return (
     <>
-      <h1>HomePage</h1>
       <TrendLine />
       <ContentGrid />
     </>

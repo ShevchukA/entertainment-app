@@ -2,21 +2,16 @@ import Logo from "./Logo";
 import Avatar from "./Avatar";
 import NavButton from "./NavButton";
 
-import homeIcon from "../assets/icon-nav-home.svg";
-import moviesIcon from "../assets/icon-nav-movies.svg";
-import showsIcon from "../assets/icon-nav-tv-series.svg";
-import bookmarkIcon from "../assets/icon-nav-bookmark.svg";
-
 import classes from "./NavBar.module.css";
 
 function NavBar() {
   return (
     <nav className={classes.navigation}>
       <Logo />
-      <NavButton path="/" icon={homeIcon} />
-      <NavButton path="/movies" icon={moviesIcon} />
-      <NavButton path="/series" icon={showsIcon} />
-      <NavButton path="/bookmark" icon={bookmarkIcon} />
+      <NavButton path="/" icon="./assets/icon-nav-home.svg" />
+      <NavButton path="/movies" icon="./assets/icon-nav-movies.svg" />
+      <NavButton path="/series" icon="./assets/icon-nav-tv-series.svg" />
+      <NavButton path="/bookmark" icon="./assets/icon-nav-bookmark.svg" />
       <Avatar />
     </nav>
   );
