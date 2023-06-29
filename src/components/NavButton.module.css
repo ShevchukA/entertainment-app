@@ -11,6 +11,10 @@ svg {
   fill: var(--dark-color);
 }
 
+svg:hover {
+  fill: var(--red-color);
+}
+
 .active svg {
   fill: var(--white-color);
 }

@@ -1,13 +1,20 @@
 .line {
   display: grid;
   height: 250px;
-  /* height: 230px;  */
-  /* grid-template-rows: 1fr; */
+  /* grid with one row */
   grid-auto-flow: column;
   column-gap: 40px;
-  overflow-x: scroll;
+  overflow-x: hidden;
 }
 
+.line::-webkit-scrollbar {
+  width: 0;
+}
+
+.line:hover {
+  cursor: ew-resize;
+  overflow-x: auto;
+}
 
 .line img {
   display: inline;
