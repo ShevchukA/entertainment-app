@@ -1,15 +1,26 @@
+import Card from "../components/Card";
 import ContentGrid from "../components/ContentGrid";
 import TrendLine from "../components/TrendLine";
 import data from "../data.json";
 
 function HomePage() {
-  const content = data.map((item) => {
-    return <img key={item.title} src={item.thumbnail.regular.large} />;
-  });
+  const content = data
+    .filter((item) => !item.isTrending)
+    .map((item) => {
+      return <Card data={item} />;
+      // return <img key={item.title} src={item.thumbnail.regular.large} />;
+    });
+
+  const trendingContent = data
+    .filter((item) => item.isTrending)
+    .map((item) => (
+      <Card data={item} />
+      // <img key={item.title} src={`${item.thumbnail.trending.large}`} />
+    ));
 
   return (
     <>
-      <TrendLine />
+      <TrendLine content={trendingContent} />
       <ContentGrid title="Recommended for you" content={content} />
     </>
   );

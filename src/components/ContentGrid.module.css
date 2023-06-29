@@ -1,5 +1,6 @@
 .grid {
   padding-right: 36px;
+  margin-bottom: 36px;
   display: grid;
   row-gap: 32px;
   column-gap: 40px;

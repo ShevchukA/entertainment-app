@@ -1,6 +1,6 @@
 .line {
   display: grid;
-  height: 250px;
+  height: 252px;
   /* grid with one row */
   grid-auto-flow: column;
   column-gap: 40px;
@@ -14,9 +14,4 @@
 .line:hover {
   cursor: ew-resize;
   overflow-x: auto;
-}
-
-.line img {
-  display: inline;
-  height: 230px;
 }
