@@ -1,0 +1,13 @@
+.grid {
+  padding-right: 36px;
+  display: grid;
+  row-gap: 32px;
+  column-gap: 40px;
+  /* 4 columns with equal width */
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid img {
+  /* image width = grid column width */
+  max-width: 100%;
+}
