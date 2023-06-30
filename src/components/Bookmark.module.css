@@ -13,6 +13,7 @@
 .bookmark:hover {
   background-color: var(--white-color);
   cursor: pointer;
+  transition: all 200ms;
 }
 
 .bookmark img {

@@ -29,6 +29,7 @@
   background-color: var(--black-color);
   color: var(--white-color);
   font-size: 24px;
+  font-weight: 300;
   caret-color: var(--red-color);
   cursor: pointer;
 }

@@ -1,5 +1,6 @@
 import classes from "./Card.module.css";
 import Bookmark from "./Bookmark";
+import PlayButton from "./PlayButton";
 
 function Card({ type, data }) {
   const { title, thumbnail, year, category, rating, isBookmarked, isTrending } =
@@ -27,6 +28,7 @@ function Card({ type, data }) {
     <div className={cardClass}>
       <div className={classes.thumbnail}>
         <img src={imgSrc} />
+        <PlayButton />
       </div>
       <div className={classes.info}>
         <span>{year}</span>
@@ -39,6 +41,7 @@ function Card({ type, data }) {
         <span>{rating}</span>
         <h3>{title}</h3>
       </div>
+
       <Bookmark isBookmarked={isBookmarked} />
     </div>
   );

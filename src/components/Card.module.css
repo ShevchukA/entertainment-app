@@ -3,6 +3,10 @@
   position: relative;
 }
 
+.thumbnail {
+  position: relative;
+}
+
 .thumbnail img {
   border-radius: 8px;
 }
