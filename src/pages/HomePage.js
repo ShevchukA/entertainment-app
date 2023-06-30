@@ -8,15 +8,13 @@ function HomePage() {
     .filter((item) => !item.isTrending)
     .map((item) => {
       return <Card key={item.title} data={item} />;
-      // return <img key={item.title} src={item.thumbnail.regular.large} />;
     });
 
   const trendingContent = data
     .filter((item) => item.isTrending)
-    .map((item) => (
-      <Card key={item.title} data={item} />
-      // <img key={item.title} src={`${item.thumbnail.trending.large}`} />
-    ));
+    .map((item) => {
+      return <Card key={item.title} data={item} />;
+    });
 
   return (
     <>

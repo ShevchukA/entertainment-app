@@ -1,3 +1,4 @@
+import Card from "../components/Card";
 import ContentGrid from "../components/ContentGrid";
 import data from "../data.json";
 
@@ -5,7 +6,7 @@ function SeriesPage() {
   const series = data
     .filter((item) => item.category === "TV Series")
     .map((item) => {
-      return <img key={item.title} src={item.thumbnail.regular.large} />;
+      return <Card key={item.title} data={item} />;
     });
 
   return (
