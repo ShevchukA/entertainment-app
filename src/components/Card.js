@@ -2,9 +2,8 @@ import classes from "./Card.module.css";
 import Bookmark from "./Bookmark";
 import PlayButton from "./PlayButton";
 
-function Card({ type, data }) {
-  const { title, thumbnail, year, category, rating, isBookmarked, isTrending } =
-    data;
+function Card({ isTrending, data }) {
+  const { title, thumbnail, year, category, rating, isBookmarked } = data;
 
   const imgSrc = isTrending
     ? thumbnail.trending.large

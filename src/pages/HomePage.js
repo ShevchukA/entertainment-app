@@ -13,7 +13,7 @@ function HomePage() {
   const trendingContent = data
     .filter((item) => item.isTrending)
     .map((item) => {
-      return <Card key={item.title} data={item} />;
+      return <Card key={item.title} data={item} isTrending={item.isTrending} />;
     });
 
   return (
