@@ -1,4 +1,5 @@
 import classes from "./Card.module.css";
+import Bookmark from "./Bookmark";
 
 function Card({ type, data }) {
   const { title, thumbnail, year, category, rating, isBookmarked, isTrending } =
@@ -38,6 +39,7 @@ function Card({ type, data }) {
         <span>{rating}</span>
         <h3>{title}</h3>
       </div>
+      <Bookmark isBookmarked={isBookmarked} />
     </div>
   );
 }

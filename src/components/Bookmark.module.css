@@ -1,0 +1,21 @@
+.bookmark {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+}
+
+.bookmark:hover {
+  background-color: var(--white-color);
+  cursor: pointer;
+}
+
+.bookmark img {
+  width: 12px;
+  margin: auto;
+}
