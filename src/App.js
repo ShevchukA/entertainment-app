@@ -5,6 +5,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import { Provider } from "react-redux";
+import store from "./store/index";
+
 import RootLayout from "./pages/RootLayout";
 import ContentLayout from "./pages/ContentLayout";
 import ErrorPage from "./pages/ErrorPage";
@@ -26,7 +29,11 @@ function App() {
       </Route>
     )
   );
-  return <RouterProvider router={router} />;
+  return (
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  );
 }
 
 export default App;
