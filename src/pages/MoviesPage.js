@@ -1,9 +1,11 @@
+import { useSelector } from "react-redux";
 import Card from "../components/Card";
 import ContentGrid from "../components/ContentGrid";
-import data from "../data.json";
 
 function MoviesPage() {
-  const movies = data
+  const content = useSelector((state) => state.items);
+
+  const movies = content
     .filter((item) => item.category === "Movie")
     .map((item) => {
       return <Card key={item.title} data={item} />;

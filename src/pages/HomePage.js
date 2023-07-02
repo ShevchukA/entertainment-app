@@ -1,16 +1,19 @@
+import { useSelector } from "react-redux";
 import Card from "../components/Card";
 import ContentGrid from "../components/ContentGrid";
 import TrendLine from "../components/TrendLine";
 import data from "../data.json";
 
 function HomePage() {
-  const content = data
+  const content = useSelector((state) => state.items);
+
+  const recommendations = content
     .filter((item) => !item.isTrending)
     .map((item) => {
       return <Card key={item.title} data={item} />;
     });
 
-  const trendingContent = data
+  const trending = content
     .filter((item) => item.isTrending)
     .map((item) => {
       return <Card key={item.title} data={item} isTrending={item.isTrending} />;
@@ -18,8 +21,8 @@ function HomePage() {
 
   return (
     <>
-      <TrendLine content={trendingContent} />
-      <ContentGrid title="Recommended for you" content={content} />
+      <TrendLine content={trending} />
+      <ContentGrid title="Recommended for you" content={recommendations} />
     </>
   );
 }
