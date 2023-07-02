@@ -3,6 +3,7 @@ import Card from "../components/Card";
 import ContentGrid from "../components/ContentGrid";
 
 function MoviesPage() {
+  console.log("MOVIES PAGE");
   const content = useSelector((state) => state.items);
 
   const movies = content

@@ -13,19 +13,13 @@ import MoviesPage from "./pages/MoviesPage";
 import SeriesPage from "./pages/SeriesPage";
 import BookmarkPage from "./pages/BookmarkPage";
 import { useEffect } from "react";
+import { fetchContent } from "./store/index";
 import { useDispatch } from "react-redux";
-import { contentActions } from "./store/index";
 
 function App() {
   const dispatch = useDispatch();
-  async function fetchData() {
-    const response = await fetch("https://api.npoint.io/4424c46c093c84dc4fa5");
-    const data = await response.json();
-    dispatch(contentActions.updateContent(data));
-  }
-
   useEffect(() => {
-    fetchData();
+    dispatch(fetchContent());
   }, []);
 
   const router = createBrowserRouter(

@@ -2,9 +2,9 @@ import { useSelector } from "react-redux";
 import Card from "../components/Card";
 import ContentGrid from "../components/ContentGrid";
 import TrendLine from "../components/TrendLine";
-import data from "../data.json";
 
 function HomePage() {
+  console.log("HOME PAGE");
   const content = useSelector((state) => state.items);
 
   const recommendations = content

@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
 import Card from "../components/Card";
 import ContentGrid from "../components/ContentGrid";
-import data from "../data.json";
 
 function BookmarkPage() {
+  console.log("BOOKMARK PAGE");
   const content = useSelector((state) => state.items);
 
   const bookmarkedMovies = content
