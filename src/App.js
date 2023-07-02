@@ -12,7 +12,6 @@ import HomePage from "./pages/HomePage";
 import MoviesPage from "./pages/MoviesPage";
 import SeriesPage from "./pages/SeriesPage";
 import BookmarkPage from "./pages/BookmarkPage";
-import { AnimatedSwitch } from "react-router-transition";
 
 function App() {
   const router = createBrowserRouter(
