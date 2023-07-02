@@ -16,7 +16,7 @@ import BookmarkPage from "./pages/BookmarkPage";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<RootLayout />}>
+      <Route path="/" element={<RootLayout />} errorElement={<ErrorPage />}>
         <Route element={<ContentLayout />} errorElement={<ErrorPage />}>
           <Route index="true" element={<HomePage />} />
           <Route path="movies" element={<MoviesPage />} />

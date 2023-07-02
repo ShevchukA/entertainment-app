@@ -1,5 +1,15 @@
+import { useRouteError } from "react-router-dom";
+
 function ErrorPage() {
-  return <h1>ErrorPage</h1>;
+  const error = useRouteError();
+  console.log(error);
+  return (
+    <div style={{ textAlign: "center" }}>
+      <h1>Opps! Something going wrong...</h1>
+      <p>Status: {error.status}</p>
+      <p>{error.data}</p>
+    </div>
+  );
 }
 
 export default ErrorPage;
