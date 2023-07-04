@@ -1,18 +1,30 @@
+import { useEffect, useRef } from "react";
 import classes from "./TrendLine.module.css";
 
 function TrendLine({ content }) {
   console.log("TRENDING");
 
+  const trending = useRef();
+
+  //onWheel event works in passive mode in React, thus can't prevent default behaviour
+  //can be solved using useEffect and useRef for adding regular event listener
+  //trending.current - DOM element
+  useEffect(() => {
+    trending.current.addEventListener("wheel", scrollHandler, {
+      passive: false,
+    });
+  }, []);
+
   function scrollHandler(e) {
-    const line = e.target.closest("#trendLine"); // select whole div
-    line.scrollLeft += e.deltaY; //deltaY because we rotate mousewheel down or up
-    // document.body.style.overflow = "hidden";
+    e.preventDefault();
+    // const line = e.target.closest("#trendLine"); // select whole div
+    trending.current.scrollLeft += e.deltaY; //deltaY because we rotate mousewheel down or up
   }
 
   return (
     <section>
       <h1>Trending</h1>
-      <div id="trendLine" className={classes.line} onWheel={scrollHandler}>
+      <div ref={trending} id="trendLine" className={classes.line}>
         {content}
       </div>
     </section>
