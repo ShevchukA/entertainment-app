@@ -1,9 +1,16 @@
 import classes from "./Card.module.css";
 import Bookmark from "./Bookmark";
 import PlayButton from "./PlayButton";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { contentActions } from "../store";
 
 function Card({ isTrending, data }) {
   const { title, thumbnail, year, category, rating, isBookmarked } = data;
+
+  const [bookmarked, setBookmarked] = useState(isBookmarked);
+
+  const dispatch = useDispatch();
 
   const imgSrc = isTrending
     ? thumbnail.trending.large
@@ -21,6 +28,11 @@ function Card({ isTrending, data }) {
     case "Movie":
       iconSrc = "./assets/icon-nav-movies.svg";
       break;
+  }
+
+  function bookmarkHandler() {
+    setBookmarked((prevState) => !prevState);
+    dispatch(contentActions.bookmarkItem(title));
   }
 
   return (
@@ -41,7 +53,7 @@ function Card({ isTrending, data }) {
         <h3>{title}</h3>
       </div>
 
-      <Bookmark isBookmarked={isBookmarked} />
+      <Bookmark isBookmarked={bookmarked} onBookmark={bookmarkHandler} />
     </div>
   );
 }

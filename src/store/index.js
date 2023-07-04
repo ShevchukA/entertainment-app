@@ -9,7 +9,11 @@ const contentSlice = createSlice({
       state.items = action.payload;
     },
     bookmarkItem(state, action) {
-      console.log(state, action.payload);
+      // console.log(action);
+      const index = state.items.findIndex(
+        (item) => item.title === action.payload
+      );
+      state.items[index].isBookmarked = !state.items[index].isBookmarked;
     },
   },
 });
