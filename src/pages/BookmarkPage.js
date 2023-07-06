@@ -12,16 +12,30 @@ function BookmarkPage() {
       return <Card key={item.title} data={item} />;
     });
 
+  let bookmarkedMoviesContent = bookmarkedMovies;
+  if (bookmarkedMovies.length === 0)
+    bookmarkedMoviesContent = <p>You don't have bookmarked movies</p>;
+
   const bookmarkedSeries = content
     .filter((item) => item.isBookmarked && item.category === "TV Series")
     .map((item) => {
       return <Card key={item.title} data={item} />;
     });
 
+  let bookmarkedSeriesContent = bookmarkedSeries;
+  if (bookmarkedSeries.length === 0)
+    bookmarkedSeriesContent = <p>You don't have bookmarked TV series</p>;
+
   return (
     <>
-      <ContentGrid title="Bookmarked Movies" content={bookmarkedMovies} />
-      <ContentGrid title="Bookmarked TV Series" content={bookmarkedSeries} />
+      <ContentGrid
+        title="Bookmarked Movies"
+        content={bookmarkedMoviesContent}
+      />
+      <ContentGrid
+        title="Bookmarked TV Series"
+        content={bookmarkedSeriesContent}
+      />
     </>
   );
 }
