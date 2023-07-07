@@ -13,13 +13,30 @@ import MoviesPage from "./pages/MoviesPage";
 import SeriesPage from "./pages/SeriesPage";
 import BookmarkPage from "./pages/BookmarkPage";
 import { useEffect } from "react";
-import { fetchContent } from "./store/index";
-import { useDispatch } from "react-redux";
+import { fetchContent, sendContent } from "./store/index";
+import { useDispatch, useSelector } from "react-redux";
 
+let isInitial = true;
 function App() {
+  console.log("APP");
+  // const content = useSelector((state) => state.items);
+
   const dispatch = useDispatch();
+  // useEffect(() => {
+  //   if (isInitial) {
+  //     console.log("initial");
+  //     isInitial = false;
+  //     dispatch(fetchContent()); // get content from a server in initial stage
+  //     return;
+  //   }
+  //   console.log("not initial");
+  //   dispatch(sendContent(content)); // send content to a server after every change in the state
+  // }, [content]);
+
   useEffect(() => {
-    dispatch(fetchContent());
+    console.log("Initial");
+    dispatch(fetchContent()); // get content from a server in initial stage
+    return () => console.log("clean up");
   }, []);
 
   const router = createBrowserRouter(

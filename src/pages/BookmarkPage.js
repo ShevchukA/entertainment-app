@@ -4,10 +4,18 @@ import ContentGrid from "../components/ContentGrid";
 
 function BookmarkPage() {
   console.log("BOOKMARK PAGE");
-  const content = useSelector((state) => state.items);
+  const content = useSelector((state) => state.content.items);
+  const searchingRequest = useSelector((state) => state.search)
+    .trim()
+    .toLowerCase();
 
   const bookmarkedMovies = content
-    .filter((item) => item.isBookmarked && item.category === "Movie")
+    .filter(
+      (item) =>
+        item.isBookmarked &&
+        item.category === "Movie" &&
+        item.title.toLowerCase().includes(searchingRequest)
+    )
     .map((item) => {
       return <Card key={item.title} data={item} />;
     });
@@ -17,7 +25,12 @@ function BookmarkPage() {
     bookmarkedMoviesContent = <p>You don't have bookmarked movies</p>;
 
   const bookmarkedSeries = content
-    .filter((item) => item.isBookmarked && item.category === "TV Series")
+    .filter(
+      (item) =>
+        item.isBookmarked &&
+        item.category === "TV Series" &&
+        item.title.toLowerCase().includes(searchingRequest)
+    )
     .map((item) => {
       return <Card key={item.title} data={item} />;
     });

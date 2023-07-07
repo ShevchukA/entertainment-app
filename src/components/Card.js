@@ -2,7 +2,7 @@ import classes from "./Card.module.css";
 import Bookmark from "./Bookmark";
 import PlayButton from "./PlayButton";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { contentActions } from "../store";
 
 function Card({ isTrending, data }) {
@@ -33,6 +33,7 @@ function Card({ isTrending, data }) {
   function bookmarkHandler() {
     setBookmarked((prevState) => !prevState);
     dispatch(contentActions.bookmarkItem(title));
+    //after that it will dispatch a send request to a server, see App.js
   }
 
   return (

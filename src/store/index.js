@@ -1,11 +1,12 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
-
+console.log("STORE");
 //create slice of global store
 const contentSlice = createSlice({
   name: "content",
   initialState: { items: [] },
   reducers: {
     updateContent(state, action) {
+      console.log("update state");
       state.items = action.payload;
     },
     bookmarkItem(state, action) {
@@ -18,27 +19,67 @@ const contentSlice = createSlice({
   },
 });
 
+const searchingSlice = createSlice({
+  name: "search",
+  initialState: "",
+  reducers: {
+    updateState(state, action) {
+      return (state = action.payload);
+    },
+  },
+});
+
 //action creator for async code
 function fetchContent() {
   return async (dispatch) => {
+    console.log("getting data");
     const response = await fetch("https://api.npoint.io/4424c46c093c84dc4fa5");
+    // const response = await fetch(
+    //   "https://react-http-c788f-default-rtdb.asia-southeast1.firebasedatabase.app/entertainment-app.json"
+    // );
 
+    console.log("getting is over");
     if (!response.ok) {
       throw new Error("Fetching data error");
     }
     const data = await response.json();
-    dispatch(contentActions.updateContent(data));
+    dispatch(contentActions.updateContent(data || [])); // empty array to avoid errorrs in case of empty data
   };
 }
 
-const contentActions = contentSlice.actions;
-const contentReducer = contentSlice.reducer;
-const store = configureStore({ reducer: contentReducer });
-// in case of one slice: useSelector(state=>state.items)
+function sendContent(content) {
+  return async () => {
+    console.log("sending", content);
 
-// const store = configureStore({ reducer: {content: contentReducer }});
-// in this case: useSelector(state=>state.content.items)
-// use for multiple slices
+    const response = await fetch(
+      "https://react-http-c788f-default-rtdb.asia-southeast1.firebasedatabase.app/entertainment-app.json",
+      {
+        method: "PUT",
+        body: JSON.stringify(content),
+      }
+    );
+
+    console.log("sending is over");
+
+    if (!response.ok) {
+      console.log(response);
+      throw new Error("Sending data is failed");
+    }
+  };
+}
+
+const contentActions = contentSlice.actions; // includes all reducers from contentSlice
+const searchingActions = searchingSlice.actions;
+const contentReducer = contentSlice.reducer;
+const searchingReducer = searchingSlice.reducer;
+
+// in case of one slice:
+// const store = configureStore({ reducer: contentReducer });
+// useSelector(state=>state.items)
+
+const store = configureStore({
+  reducer: { content: contentReducer, search: searchingReducer },
+});
 
 export default store;
-export { contentActions, fetchContent }; // to get acsess for dispatching
+export { contentActions, searchingActions, fetchContent, sendContent }; // to get acsess for dispatching
