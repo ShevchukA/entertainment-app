@@ -6,12 +6,21 @@ import TrendLine from "../components/TrendLine";
 function HomePage() {
   console.log("HOME PAGE");
   const content = useSelector((state) => state.content.items);
-  const searchingRequest = useSelector((state) => state.search)
-    .trim()
-    .toLowerCase();
+  const searchingRequest = useSelector(
+    (state) => state.search.searchingRequest
+  );
+
+  const isSearching = useSelector((state) => state.search.isSearching);
 
   console.log("Content: ", content);
-  console.log(searchingRequest.trim().length);
+
+  const searchResults = content
+    .filter((item) =>
+      item.title.toLowerCase().includes(searchingRequest.trim().toLowerCase())
+    )
+    .map((item) => {
+      return <Card key={item.title} data={item} />;
+    });
 
   const trending = content
     .filter((item) => item.isTrending)
@@ -20,18 +29,23 @@ function HomePage() {
     });
 
   const recommendations = content
-    .filter(
-      (item) =>
-        !item.isTrending && item.title.toLowerCase().includes(searchingRequest)
-    )
+    .filter((item) => !item.isTrending)
     .map((item) => {
       return <Card key={item.title} data={item} />;
     });
 
   return (
     <>
-      {searchingRequest.trim().length === 0 && <TrendLine content={trending} />}
-      <ContentGrid title="Recommended for you" content={recommendations} />
+      {isSearching && (
+        <ContentGrid
+          title={`Found ${searchResults.length} results for '${searchingRequest}'`}
+          content={searchResults}
+        />
+      )}
+      {!isSearching && <TrendLine content={trending} />}
+      {!isSearching && (
+        <ContentGrid title="Recommended for you" content={recommendations} />
+      )}
     </>
   );
 }

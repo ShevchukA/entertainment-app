@@ -4,7 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { searchingActions } from "../store";
 
 function SearchBar() {
-  const searchText = useSelector((state) => state.search);
+  const searchingRequest = useSelector(
+    (state) => state.search.searchingRequest
+  );
+
   const dispatch = useDispatch();
   function searchHandler(e) {
     dispatch(searchingActions.updateState(e.target.value));
@@ -18,7 +21,7 @@ function SearchBar() {
       <div className={classes.field}>
         <input
           onChange={searchHandler}
-          value={searchText}
+          value={searchingRequest}
           type="text"
           placeholder="Search for movies and TV series"
         />

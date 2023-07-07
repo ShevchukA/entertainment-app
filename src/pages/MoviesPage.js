@@ -5,23 +5,36 @@ import ContentGrid from "../components/ContentGrid";
 function MoviesPage() {
   console.log("MOVIES PAGE");
   const content = useSelector((state) => state.content.items);
-  const searchingRequest = useSelector((state) => state.search)
-    .trim()
-    .toLowerCase();
+  const searchingRequest = useSelector(
+    (state) => state.search.searchingRequest
+  );
+  const isSearching = useSelector((state) => state.search.isSearching);
 
-  const movies = content
+  const searchResults = content
     .filter(
       (item) =>
         item.category === "Movie" &&
-        item.title.toLowerCase().includes(searchingRequest)
+        item.title.toLowerCase().includes(searchingRequest.trim().toLowerCase())
     )
+    .map((item) => {
+      return <Card key={item.title} data={item} />;
+    });
+
+  const movies = content
+    .filter((item) => item.category === "Movie")
     .map((item) => {
       return <Card key={item.title} data={item} />;
     });
 
   return (
     <>
-      <ContentGrid title="Movies" content={movies} />
+      {isSearching && (
+        <ContentGrid
+          title={`Found ${searchResults.length} results for '${searchingRequest}'`}
+          content={searchResults}
+        />
+      )}
+      {!isSearching && <ContentGrid title="Movies" content={movies} />}
     </>
   );
 }

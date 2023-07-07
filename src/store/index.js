@@ -21,10 +21,15 @@ const contentSlice = createSlice({
 
 const searchingSlice = createSlice({
   name: "search",
-  initialState: "",
+  initialState: { searchingRequest: "", isSearching: false },
   reducers: {
     updateState(state, action) {
-      return (state = action.payload);
+      if (action.payload.trim() === "") {
+        state.isSearching = false;
+      } else {
+        state.isSearching = true;
+      }
+      state.searchingRequest = action.payload;
     },
   },
 });
