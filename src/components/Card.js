@@ -4,8 +4,8 @@ import PlayButton from "./PlayButton";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { contentActions } from "../store";
-import { ReactComponent as IconTV } from "../assets/icon-nav-tv-series.svg";
-import { ReactComponent as IconMovies } from "../assets/icon-nav-movies.svg";
+import { ReactComponent as IconTV } from "../assets/icon-category-tv.svg";
+import { ReactComponent as IconMovies } from "../assets/icon-category-movie.svg";
 
 function Card({ isTrending, data }) {
   const { title, thumbnail, year, category, rating, isBookmarked } = data;
