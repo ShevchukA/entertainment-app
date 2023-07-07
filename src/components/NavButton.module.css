@@ -2,24 +2,21 @@
   align-self: center;
   margin: 20px 0;
   width: 20px;
-}
-
-/* doesn't work */
-svg {
-  width: 20px;
   height: 20px;
-  fill: var(--dark-color);
 }
 
-svg:hover {
+.button svg path {
+  fill: var(--sea-color);
+}
+
+.button svg:hover path {
   fill: var(--red-color);
 }
 
-.active svg {
+.active svg path {
   fill: var(--white-color);
 }
 
-/* temp */
-.active img {
-  background-color: var(--white-color);
+.active:hover svg path {
+  fill: var(--white-color);
 }

@@ -10,13 +10,24 @@
   display: flex;
 }
 
-.bookmark:hover {
-  background-color: var(--white-color);
-  cursor: pointer;
-  transition: all 200ms;
+.bookmark svg {
+  width: 12px;
+  height: 14px;
+  margin: auto;
 }
 
-.bookmark img {
-  width: 12px;
-  margin: auto;
+.bookmark:hover {
+  cursor: pointer;
+  transition: all 200ms;
+  background-color: var(--white-color);
+}
+
+.bookmark:hover .empty path {
+  stroke: var(--background-color);
+  fill: var(--white-color);
+}
+
+.bookmark:hover .full path {
+  stroke: var(--white-color);
+  fill: var(--background-color);
 }

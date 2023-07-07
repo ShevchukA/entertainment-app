@@ -1,8 +1,10 @@
 import { NavLink } from "react-router-dom";
 import classes from "./NavButton.module.css";
+import { ReactComponent as Icon } from "../assets/icon-nav-home.svg";
 
-function NavButton({ path, icon }) {
+function NavButton({ path, children }) {
   // console.log(icon);
+
   return (
     <NavLink
       className={({ isActive }) =>
@@ -10,8 +12,7 @@ function NavButton({ path, icon }) {
       }
       to={path}
     >
-      <img src={icon} alt={path} />
-      {/* <svg src={icon} /> */}
+      {children}
     </NavLink>
   );
 }

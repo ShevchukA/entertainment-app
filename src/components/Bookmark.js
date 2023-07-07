@@ -1,4 +1,6 @@
 import classes from "./Bookmark.module.css";
+import { ReactComponent as IconBookmarkFull } from "../assets/icon-bookmark-full.svg";
+import { ReactComponent as IconBookmarkEmpty } from "../assets/icon-bookmark-empty.svg";
 
 function Bookmark({ isBookmarked, onBookmark }) {
   let iconSrc = isBookmarked
@@ -11,7 +13,11 @@ function Bookmark({ isBookmarked, onBookmark }) {
 
   return (
     <div onClick={clickHandler} className={classes.bookmark}>
-      <img src={iconSrc} />
+      {isBookmarked ? (
+        <IconBookmarkFull className={classes.full} />
+      ) : (
+        <IconBookmarkEmpty className={classes.empty} />
+      )}
     </div>
   );
 }

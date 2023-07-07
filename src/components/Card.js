@@ -4,6 +4,8 @@ import PlayButton from "./PlayButton";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { contentActions } from "../store";
+import { ReactComponent as IconTV } from "../assets/icon-nav-tv-series.svg";
+import { ReactComponent as IconMovies } from "../assets/icon-nav-movies.svg";
 
 function Card({ isTrending, data }) {
   const { title, thumbnail, year, category, rating, isBookmarked } = data;
@@ -19,16 +21,6 @@ function Card({ isTrending, data }) {
   const cardClass = isTrending
     ? `${classes.card} ${classes.trending}`
     : classes.card;
-
-  let iconSrc;
-  switch (category) {
-    case "TV Series":
-      iconSrc = "./assets/icon-nav-tv-series.svg";
-      break;
-    case "Movie":
-      iconSrc = "./assets/icon-nav-movies.svg";
-      break;
-  }
 
   function bookmarkHandler() {
     setBookmarked((prevState) => !prevState);
@@ -46,7 +38,8 @@ function Card({ isTrending, data }) {
         <span>{year}</span>
         <span>•</span>
         <span>
-          <img src={iconSrc} alt="icon" />
+          {category === "Movie" && <IconMovies />}
+          {category === "TV Series" && <IconTV />}
         </span>
         <span>{category}</span>
         <span>•</span>

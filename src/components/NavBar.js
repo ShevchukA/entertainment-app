@@ -2,6 +2,10 @@ import Logo from "./Logo";
 import Avatar from "./Avatar";
 import NavButton from "./NavButton";
 import homeicon from "../assets/icon-nav-home.svg";
+import { ReactComponent as IconHome } from "../assets/icon-nav-home.svg";
+import { ReactComponent as IconMovies } from "../assets/icon-nav-movies.svg";
+import { ReactComponent as IconSeries } from "../assets/icon-nav-tv-series.svg";
+import { ReactComponent as IconBookmark } from "../assets/icon-nav-bookmark.svg";
 
 import classes from "./NavBar.module.css";
 
@@ -9,16 +13,18 @@ function NavBar() {
   return (
     <nav className={classes.navigation}>
       <Logo />
-      <NavButton path="/" icon="./assets/icon-nav-home.svg" />
-      <NavButton path="/movies" icon="./assets/icon-nav-movies.svg" />
-      <NavButton path="/series" icon="./assets/icon-nav-tv-series.svg" />
-      <NavButton path="/bookmark" icon="./assets/icon-nav-bookmark.svg" />
-
-      {/* TEMP */}
-      <p>temp</p>
-      <svg src={homeicon} />
-      <svg src="./assets/icon-nav-home.svg" />
-      <svg src="../assets/icon-nav-home.svg" />
+      <NavButton path="/">
+        <IconHome />
+      </NavButton>
+      <NavButton path="/movies">
+        <IconMovies />
+      </NavButton>
+      <NavButton path="/series">
+        <IconSeries />
+      </NavButton>
+      <NavButton path="/bookmark">
+        <IconBookmark />
+      </NavButton>
 
       <Avatar />
     </nav>

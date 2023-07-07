@@ -25,9 +25,14 @@
 }
 
 /* small logo styling */
-.info span img {
-  height: 12px;
-  margin: auto;
+
+.info svg {
+  transform: scale(0.7) translateY(7px);
+
+}
+
+.info svg path {
+  fill: var(--white-color);
 }
 
 .info h3 {

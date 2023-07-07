@@ -5,3 +5,7 @@
   align-self: center;
   margin: 32px 0;
 }
+
+.avatar:hover {
+  cursor: pointer;
+}
