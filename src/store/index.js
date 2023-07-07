@@ -3,11 +3,15 @@ console.log("STORE");
 //create slice of global store
 const contentSlice = createSlice({
   name: "content",
-  initialState: { items: [] },
+  initialState: { items: [], isLoading: true },
   reducers: {
+    setIsLoading(state) {
+      state.isLoading = true;
+    },
     updateContent(state, action) {
       console.log("update state");
       state.items = action.payload;
+      state.isLoading = false;
     },
     bookmarkItem(state, action) {
       // console.log(action);
@@ -37,6 +41,7 @@ const searchingSlice = createSlice({
 //action creator for async code
 function fetchContent() {
   return async (dispatch) => {
+    dispatch(contentActions.setIsLoading());
     console.log("getting data");
     const response = await fetch("https://api.npoint.io/4424c46c093c84dc4fa5");
     // const response = await fetch(
