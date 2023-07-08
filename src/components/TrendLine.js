@@ -22,12 +22,12 @@ function TrendLine({ content }) {
   }
 
   return (
-    <section>
+    <div>
       <h1>Trending</h1>
       <div ref={trending} id="trendLine" className={classes.line}>
         {content}
       </div>
-    </section>
+    </div>
   );
 }
 

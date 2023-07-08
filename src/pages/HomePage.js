@@ -35,7 +35,7 @@ function HomePage() {
     });
 
   return (
-    <>
+    <div>
       {isSearching && (
         <ContentGrid
           title={`Found ${searchResults.length} results for '${searchingRequest}'`}
@@ -46,7 +46,7 @@ function HomePage() {
       {!isSearching && (
         <ContentGrid title="Recommended for you" content={recommendations} />
       )}
-    </>
+    </div>
   );
 }
 

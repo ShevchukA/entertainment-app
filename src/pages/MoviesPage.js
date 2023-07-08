@@ -27,7 +27,7 @@ function MoviesPage() {
     });
 
   return (
-    <>
+    <div>
       {isSearching && (
         <ContentGrid
           title={`Found ${searchResults.length} results for '${searchingRequest}'`}
@@ -35,7 +35,7 @@ function MoviesPage() {
         />
       )}
       {!isSearching && <ContentGrid title="Movies" content={movies} />}
-    </>
+    </div>
   );
 }
 

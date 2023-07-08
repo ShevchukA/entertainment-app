@@ -41,7 +41,7 @@ function BookmarkPage() {
     bookmarkedSeriesContent = <p>You don't have bookmarked TV series</p>;
 
   return (
-    <>
+    <div>
       {isSearching && (
         <ContentGrid
           title={`Found ${searchResults.length} results for '${searchingRequest}'`}
@@ -60,7 +60,7 @@ function BookmarkPage() {
           content={bookmarkedSeriesContent}
         />
       )}
-    </>
+    </div>
   );
 }
 

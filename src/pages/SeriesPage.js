@@ -27,7 +27,7 @@ function SeriesPage() {
     });
 
   return (
-    <>
+    <div>
       {isSearching && (
         <ContentGrid
           title={`Found ${searchResults.length} results for '${searchingRequest}'`}
@@ -35,7 +35,7 @@ function SeriesPage() {
         />
       )}
       {!isSearching && <ContentGrid title="TV Series" content={series} />}
-    </>
+    </div>
   );
 }
 
