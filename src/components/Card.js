@@ -14,9 +14,18 @@ function Card({ isTrending, data }) {
 
   const dispatch = useDispatch();
 
+  //TODO: img sizing, lazy loading?
   const imgSrc = isTrending
-    ? thumbnail.trending.large
-    : thumbnail.regular.large;
+    ? thumbnail.trending.small
+    : thumbnail.regular.small;
+
+  const imgSrcSet = isTrending
+    ? `${thumbnail.trending.small} 328w,
+       ${thumbnail.trending.medium} 440w,
+       ${thumbnail.trending.large} 560w`
+    : `${thumbnail.regular.small} 328w,
+       ${thumbnail.regular.medium} 440w,
+       ${thumbnail.regular.large} 560w`;
 
   const cardClass = isTrending
     ? `${classes.card} ${classes.trending}`
@@ -31,7 +40,12 @@ function Card({ isTrending, data }) {
   return (
     <div className={cardClass}>
       <div className={classes.thumbnail}>
-        <img src={imgSrc} />
+        <img
+          src={imgSrc}
+          srcSet={imgSrcSet}
+          // sizes="(max-width: 600px) 45vw, (max-width: 1200px) 25vw, 20vw"
+          alt={`Cover image for ${category} ${title}`}
+        />
         <PlayButton />
       </div>
       <div className={classes.info}>

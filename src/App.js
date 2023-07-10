@@ -19,9 +19,10 @@ import { useDispatch, useSelector } from "react-redux";
 let isInitial = true;
 function App() {
   console.log("APP");
-  // const content = useSelector((state) => state.items);
+  const content = useSelector((state) => state.content.items);
 
   const dispatch = useDispatch();
+
   // useEffect(() => {
   //   if (isInitial) {
   //     console.log("initial");
