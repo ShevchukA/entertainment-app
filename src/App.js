@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 
 import RootLayout from "./pages/RootLayout";
-import ContentLayout from "./pages/ContentLayout";
 import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
 import MoviesPage from "./pages/MoviesPage";
@@ -43,12 +42,10 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />} errorElement={<ErrorPage />}>
-        <Route element={<ContentLayout />} errorElement={<ErrorPage />}>
-          <Route index="true" element={<HomePage />} />
-          <Route path="movies" element={<MoviesPage />} />
-          <Route path="series" element={<SeriesPage />} />
-          <Route path="bookmark" element={<BookmarkPage />} />
-        </Route>
+        <Route index="true" element={<HomePage />} />
+        <Route path="movies" element={<MoviesPage />} />
+        <Route path="series" element={<SeriesPage />} />
+        <Route path="bookmark" element={<BookmarkPage />} />
       </Route>
     )
   );

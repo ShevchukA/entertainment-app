@@ -1,5 +1,5 @@
 import classes from "./PlayButton.module.css";
-import icon from "../assets/icon-play.svg";
+import icon from "../../assets/icon-play.svg";
 
 function PlayButton() {
   return (

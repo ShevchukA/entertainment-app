@@ -1,11 +1,10 @@
-import Logo from "./Logo";
-import Avatar from "./Avatar";
-import NavButton from "./NavButton";
-import homeicon from "../assets/icon-nav-home.svg";
-import { ReactComponent as IconHome } from "../assets/icon-nav-home.svg";
-import { ReactComponent as IconMovies } from "../assets/icon-nav-movies.svg";
-import { ReactComponent as IconSeries } from "../assets/icon-nav-tv-series.svg";
-import { ReactComponent as IconBookmark } from "../assets/icon-nav-bookmark.svg";
+import Logo from "../Logo/Logo";
+import Avatar from "../Avatar/Avatar";
+import NavButton from "../NavButton/NavButton";
+import { ReactComponent as IconHome } from "../../assets/icon-nav-home.svg";
+import { ReactComponent as IconMovies } from "../../assets/icon-nav-movies.svg";
+import { ReactComponent as IconSeries } from "../../assets/icon-nav-tv-series.svg";
+import { ReactComponent as IconBookmark } from "../../assets/icon-nav-bookmark.svg";
 
 import classes from "./NavBar.module.css";
 

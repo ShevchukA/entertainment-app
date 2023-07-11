@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import Card from "../components/Card";
-import ContentGrid from "../components/ContentGrid";
+import Card from "../components/Card/Card";
+import ContentGrid from "../components/ContentGrid/ContentGrid";
 
 function BookmarkPage() {
   console.log("BOOKMARK PAGE");
@@ -41,7 +41,7 @@ function BookmarkPage() {
     bookmarkedSeriesContent = <p>You don't have bookmarked TV series</p>;
 
   return (
-    <div>
+    <>
       {isSearching && (
         <ContentGrid
           title={`Found ${searchResults.length} results for '${searchingRequest}'`}
@@ -60,7 +60,7 @@ function BookmarkPage() {
           content={bookmarkedSeriesContent}
         />
       )}
-    </div>
+    </>
   );
 }
 

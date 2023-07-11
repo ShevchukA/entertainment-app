@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
-import Card from "../components/Card";
-import ContentGrid from "../components/ContentGrid";
-import TrendLine from "../components/TrendLine";
+import Card from "../components/Card/Card";
+import ContentGrid from "../components/ContentGrid/ContentGrid";
+import TrendLine from "../components/TrendLine/TrendLine";
 
 function HomePage() {
   console.log("HOME PAGE");
@@ -35,7 +35,7 @@ function HomePage() {
     });
 
   return (
-    <div>
+    <>
       {isSearching && (
         <ContentGrid
           title={`Found ${searchResults.length} results for '${searchingRequest}'`}
@@ -46,7 +46,7 @@ function HomePage() {
       {!isSearching && (
         <ContentGrid title="Recommended for you" content={recommendations} />
       )}
-    </div>
+    </>
   );
 }
 

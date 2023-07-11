@@ -1,11 +1,11 @@
 import classes from "./Card.module.css";
-import Bookmark from "./Bookmark";
-import PlayButton from "./PlayButton";
+import Bookmark from "../Bookmark/Bookmark";
+import PlayButton from "../PlayButton/PlayButton";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { contentActions } from "../store";
-import { ReactComponent as IconTV } from "../assets/icon-category-tv.svg";
-import { ReactComponent as IconMovies } from "../assets/icon-category-movie.svg";
+import { contentActions } from "../../store";
+import { ReactComponent as IconTV } from "../../assets/icon-category-tv.svg";
+import { ReactComponent as IconMovies } from "../../assets/icon-category-movie.svg";
 
 function Card({ isTrending, data }) {
   const { title, thumbnail, year, category, rating, isBookmarked } = data;
@@ -44,7 +44,7 @@ function Card({ isTrending, data }) {
           src={imgSrc}
           srcSet={imgSrcSet}
           // sizes="(max-width: 600px) 45vw, (max-width: 1200px) 25vw, 20vw"
-          alt={`Cover image for ${category} ${title}`}
+          alt={`${category} ${title}`}
         />
         <PlayButton />
       </div>
