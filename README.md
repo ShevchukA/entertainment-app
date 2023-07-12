@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [](https://entertainment-study-app.netlify.app/)
+- Live Site URL: [Netlify](https://entertainment-study-app.netlify.app/)
 
 ## My process
 
