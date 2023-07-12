@@ -1,14 +1,25 @@
 .card {
-  max-width: 100%;
   position: relative;
+}
+
+.container {
+  position: relative;
+  /* Width of conatainer equal to grid column */
+  /* max-width: 100%; */
 }
 
 .thumbnail {
   position: relative;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .thumbnail img {
-  border-radius: 8px;
+  /* remove extra 3px for div due to brovser setup */
+  vertical-align: top;
+  /* image width equal to container width */
+  min-width: 100%;
+  /* max-width: 100% */
 }
 
 .info {
@@ -40,7 +51,7 @@
 
 .card.trending .info {
   position: absolute;
-  top: 154px;
+  bottom: 24px;
   left: 24px;
 }
 
@@ -70,8 +81,7 @@
   }
 
   .card.trending .info {
-    position: absolute;
-    top: 170px;
+    bottom: 16px;
     left: 16px;
   }
 }

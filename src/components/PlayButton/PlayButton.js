@@ -1,11 +1,11 @@
 import classes from "./PlayButton.module.css";
-import icon from "../../assets/icon-play.svg";
+import { ReactComponent as PlayIcon } from "../../assets/icon-play.svg";
 
 function PlayButton() {
   return (
     <div className={classes.play}>
       <div className={classes.button}>
-        <img src={icon} alt="play" />
+        <PlayIcon />
         <h3>Play</h3>
       </div>
     </div>

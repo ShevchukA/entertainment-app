@@ -38,29 +38,31 @@ function Card({ isTrending, data }) {
 
   return (
     <div className={cardClass}>
-      <div className={classes.thumbnail}>
-        <img
-          src={imgSrc}
-          srcSet={imgSrcSet}
-          // sizes="(max-width: 600px) 45vw, (max-width: 1200px) 25vw, 20vw"
-          alt={`${category} ${title}`}
-        />
-        <PlayButton />
-      </div>
-      <div className={classes.info}>
-        <span>{year}</span>
-        <span>•</span>
-        <span>
-          {category === "Movie" && <IconMovies />}
-          {category === "TV Series" && <IconTV />}
-        </span>
-        <span>{category}</span>
-        <span>•</span>
-        <span>{rating}</span>
-        <h3>{title}</h3>
-      </div>
+      <div className={classes.container}>
+        <div className={classes.thumbnail}>
+          <img
+            src={imgSrc}
+            srcSet={imgSrcSet}
+            sizes="(max-width: 700px) 45vw, (max-width: 1100px) 25vw, 20vw"
+            alt={`${category} ${title}`}
+          />
+          <PlayButton />
+          <Bookmark isBookmarked={bookmarked} onBookmark={bookmarkHandler} />
+        </div>
 
-      <Bookmark isBookmarked={bookmarked} onBookmark={bookmarkHandler} />
+        <div className={classes.info}>
+          <span>{year}</span>
+          <span>•</span>
+          <span>
+            {category === "Movie" && <IconMovies />}
+            {category === "TV Series" && <IconTV />}
+          </span>
+          <span>{category}</span>
+          <span>•</span>
+          <span>{rating}</span>
+          <h3>{title}</h3>
+        </div>
+      </div>
     </div>
   );
 }
