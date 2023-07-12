@@ -4,7 +4,7 @@ import ContentGrid from "../components/ContentGrid/ContentGrid";
 import TrendLine from "../components/TrendLine/TrendLine";
 
 function HomePage() {
-  console.log("HOME PAGE");
+  // console.log("HOME PAGE");
   const content = useSelector((state) => state.content.items);
   const searchingRequest = useSelector(
     (state) => state.search.searchingRequest
@@ -12,7 +12,7 @@ function HomePage() {
 
   const isSearching = useSelector((state) => state.search.isSearching);
 
-  console.log("Content: ", content);
+  // console.log("Content: ", content);
 
   const searchResults = content
     .filter((item) =>

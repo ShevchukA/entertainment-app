@@ -3,7 +3,7 @@ import Card from "../components/Card/Card";
 import ContentGrid from "../components/ContentGrid/ContentGrid";
 
 function MoviesPage() {
-  console.log("MOVIES PAGE");
+  // console.log("MOVIES PAGE");
   const content = useSelector((state) => state.content.items);
   const searchingRequest = useSelector(
     (state) => state.search.searchingRequest
