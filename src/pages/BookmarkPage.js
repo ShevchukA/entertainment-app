@@ -3,7 +3,7 @@ import Card from "../components/Card/Card";
 import ContentGrid from "../components/ContentGrid/ContentGrid";
 
 function BookmarkPage() {
-  console.log("BOOKMARK PAGE");
+  // console.log("BOOKMARK PAGE");
   const content = useSelector((state) => state.content.items);
   const searchingRequest = useSelector(
     (state) => state.search.searchingRequest

@@ -9,7 +9,7 @@ const contentSlice = createSlice({
       state.isLoading = true;
     },
     updateContent(state, action) {
-      console.log("update state");
+      // console.log("update state");
       state.items = action.payload;
       state.isLoading = false;
     },
