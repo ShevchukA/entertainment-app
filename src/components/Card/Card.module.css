@@ -51,3 +51,27 @@
 .card.trending .info span {
   font-size: 15px;
 }
+
+@media only screen and (max-width: 700px) {
+  .info {
+    font-size: 11px;
+  }
+
+  .info h3 {
+    font-size: 14px;
+  }
+
+  .card.trending .info h3 {
+    font-size: 15px;
+  }
+
+  .card.trending .info span {
+    font-size: 12px;
+  }
+
+  .card.trending .info {
+    position: absolute;
+    top: 170px;
+    left: 16px;
+  }
+}
