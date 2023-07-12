@@ -19,9 +19,8 @@ function Card({ isTrending, data }) {
     : thumbnail.regular.small;
 
   const imgSrcSet = isTrending
-    ? `${thumbnail.trending.small} 328w,
-       ${thumbnail.trending.medium} 440w,
-       ${thumbnail.trending.large} 560w`
+    ? `${thumbnail.trending.small} 480w,
+       ${thumbnail.trending.large} 940w`
     : `${thumbnail.regular.small} 328w,
        ${thumbnail.regular.medium} 440w,
        ${thumbnail.regular.large} 560w`;
@@ -43,7 +42,7 @@ function Card({ isTrending, data }) {
           <img
             src={imgSrc}
             srcSet={imgSrcSet}
-            sizes="(max-width: 700px) 45vw, (max-width: 1100px) 25vw, 20vw"
+            // sizes="(max-width: 700px) 45vw, (max-width: 1100px) 25vw, 20vw"
             alt={`${category} ${title}`}
           />
           <PlayButton />

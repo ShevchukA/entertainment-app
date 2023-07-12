@@ -11,10 +11,13 @@
   opacity: 0;
 }
 
-.play:hover {
-  opacity: 1;
-  transition: all 300ms;
-  cursor: pointer;
+/* use hover only on devicies with */
+@media (hover: hover) {
+  .play:hover {
+    opacity: 1;
+    transition: all 300ms;
+    cursor: pointer;
+  }
 }
 
 .button {

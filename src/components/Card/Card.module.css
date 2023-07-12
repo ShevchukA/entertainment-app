@@ -47,6 +47,7 @@
 /* card styling for trending line */
 .card.trending .thumbnail img {
   min-height: 210px;
+  max-height: 230px;
 }
 
 .card.trending .info {
@@ -62,6 +63,13 @@
 .card.trending .info span {
   font-size: 15px;
 }
+
+@media only screen and (min-width: 1600px) {
+  .card.trending .thumbnail img {
+    max-height: 300px;
+  }
+}
+
 
 @media only screen and (max-width: 700px) {
   .info {
@@ -86,6 +94,7 @@
   }
 
   .card.trending .thumbnail img {
-    min-height: 160px;
+    min-height: 140px;
+    max-height: 140px;
   }
 }
