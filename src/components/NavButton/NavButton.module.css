@@ -20,3 +20,9 @@
 .active:hover svg path {
   fill: var(--white-color);
 }
+
+@media only screen and (max-width: 1100px) {
+  .button {
+    margin: 0 20px;
+  }
+}

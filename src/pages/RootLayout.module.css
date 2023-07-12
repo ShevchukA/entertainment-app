@@ -9,3 +9,19 @@ main {
   width: 100%;
   overflow-x: hidden;
 }
+
+@media only screen and (max-width: 1100px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .content {
+    margin: 0 24px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .content {
+    margin: 0 16px;
+  }
+}

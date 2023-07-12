@@ -2,8 +2,6 @@ import { useEffect, useRef } from "react";
 import classes from "./TrendLine.module.css";
 
 function TrendLine({ content }) {
-  console.log("TRENDING");
-
   const trending = useRef();
 
   //onWheel event works in passive mode in React, thus can't prevent default behaviour

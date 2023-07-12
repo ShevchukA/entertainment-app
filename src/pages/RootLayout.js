@@ -11,7 +11,7 @@ function RootLayout() {
       <NavBar />
       <main>
         <SearchBar />
-        <section className="content">
+        <section className={classes.content}>
           {isLoading ? <h1>Loading content for you...</h1> : <Outlet />}
         </section>
       </main>

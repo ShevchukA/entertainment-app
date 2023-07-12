@@ -1,7 +1,6 @@
 import classes from "./ContentGrid.module.css";
 
 function ContentGrid({ content, title }) {
-  console.log("CONTENT");
   return (
     <div>
       <h1>{title}</h1>

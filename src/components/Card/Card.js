@@ -14,7 +14,6 @@ function Card({ isTrending, data }) {
 
   const dispatch = useDispatch();
 
-  //TODO: img sizing, lazy loading?
   const imgSrc = isTrending
     ? thumbnail.trending.small
     : thumbnail.regular.small;
