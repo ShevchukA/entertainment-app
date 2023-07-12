@@ -4,6 +4,8 @@
   width: 40px;
   align-self: center;
   margin: 32px 0;
+  /* for removing the highlight */
+  -webkit-tap-highlight-color: transparent;
 }
 
 .avatar:hover {

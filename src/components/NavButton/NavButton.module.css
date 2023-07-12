@@ -3,6 +3,8 @@
   margin: 20px 0;
   width: 20px;
   height: 20px;
+  /* for removing the tap highlight */
+  -webkit-tap-highlight-color: transparent;
 }
 
 .button svg path {
