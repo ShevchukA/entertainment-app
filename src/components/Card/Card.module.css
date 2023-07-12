@@ -46,7 +46,7 @@
 
 /* card styling for trending line */
 .card.trending .thumbnail img {
-  max-height: 230px;
+  min-height: 210px;
 }
 
 .card.trending .info {
@@ -83,5 +83,9 @@
   .card.trending .info {
     bottom: 16px;
     left: 16px;
+  }
+
+  .card.trending .thumbnail img {
+    min-height: 160px;
   }
 }

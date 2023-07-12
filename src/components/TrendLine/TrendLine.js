@@ -22,8 +22,10 @@ function TrendLine({ content }) {
   return (
     <div>
       <h1>Trending</h1>
-      <div ref={trending} id="trendLine" className={classes.line}>
-        {content}
+      <div className={classes.scroll}>
+        <div ref={trending} id="trendLine" className={classes.line}>
+          {content}
+        </div>
       </div>
     </div>
   );
