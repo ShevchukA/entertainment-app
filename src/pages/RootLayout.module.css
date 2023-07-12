@@ -10,6 +10,19 @@ main {
   overflow-x: hidden;
 }
 
+main::-webkit-scrollbar {
+  width: 10px;
+}
+
+main::-webkit-scrollbar-track {
+  background-color: var(--black-color);
+}
+
+main::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--dark-color);
+}
+
 @media only screen and (max-width: 1100px) {
   .container {
     flex-direction: column;
